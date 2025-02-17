@@ -11,8 +11,8 @@ services:
       apt-get install -y amneziawg*
       && node server.js"
     ports:
-      - "51620:51620/udp"
-      - "127.0.0.1:51621:51621/tcp"
+      - "${WG_PORT}:${WG_PORT}/udp"
+      - "127.0.0.1:${PORT}:${PORT}/tcp"
     restart: unless-stopped
     cap_add:
       - NET_ADMIN
